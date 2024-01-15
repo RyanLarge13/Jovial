@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import MenuIcon from "../public/menu-icon.svg";
@@ -17,10 +18,11 @@ const Nav = () => {
             exit={{ opacity: 0 }}
             className="flex gap-x-10"
           >
-            <li>Home</li>
+            <li>
+              <Link href="/">Home</Link>
+            </li>
             <li>Contact</li>
             <li>About Jovial</li>
-            <li>Sign Up</li>
           </motion.ul>
         )}
       </AnimatePresence>
