@@ -16,7 +16,7 @@ export default function Home() {
     const birthday = formData.get("birthday");
     const phone = formData.get("phone");
     const newUser = {
-      username,
+      username: username,
       email,
       password,
       birthday,
