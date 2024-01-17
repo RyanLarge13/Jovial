@@ -15,12 +15,19 @@ export default function Home() {
     const password = formData.get("password");
     const birthday = formData.get("birthday");
     const phone = formData.get("phone");
+
+    const validUsername = typeof username === "string" ? username : "";
+    const validEmail = typeof email === "string" ? email : "";
+    const validPass = typeof password === "string" ? password : "";
+    const validBirthday = typeof birthday === "string" ? birthday : "";
+    const validPhone = typeof phone === "string" ? phone : "";
+
     const newUser = {
-      username: username,
-      email,
-      password,
-      birthday,
-      phone,
+      username: validUsername,
+      email: validEmail,
+      password: validPass,
+      birthday: validBirthday,
+      phone: validPhone,
       avatarUrl: "",
       verified: false,
     };
