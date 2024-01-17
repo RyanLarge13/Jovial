@@ -1,8 +1,38 @@
+import { PrismaClient } from "@prisma/client";
 import Image from "next/image";
 import BG from "../public/login-bg.svg";
 import LoginSignupWrapper from "@/components/LoginSignupWrapper";
+const prisma = new PrismaClient();
 
 export default function Home() {
+  const loginUser = async (formData: FormData) => {
+    "use server";
+  };
+  const signupUser = async (formData: FormData) => {
+    "use server";
+    const username = formData.get("username");
+    const email = formData.get("email");
+    const password = formData.get("password");
+    const birthday = formData.get("birthday");
+    const phone = formData.get("phone");
+    const newUser = {
+      username,
+      email,
+      password,
+      birthday,
+      phone,
+      avatarUrl: "",
+      verified: false,
+    };
+    const uploadedUser = await prisma.user.create({ data: newUser });
+    if (!uploadedUser) {
+      console.log("failed to upload user");
+    }
+    if (uploadedUser) {
+      console.log("user uploaded");
+    }
+  };
+
   return (
     <main className="flex flex-col md:flex-row justify-center items-center h-screen px-5 lg:px-40 relative">
       <Image
@@ -16,7 +46,7 @@ export default function Home() {
           The world is full of amazing people to meet...
         </p>
       </div>
-      <LoginSignupWrapper />
+      <LoginSignupWrapper loginUser={loginUser} signupUser={signupUser} />
     </main>
   );
 }

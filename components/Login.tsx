@@ -1,31 +1,36 @@
 import { motion } from "framer-motion";
 
-const Login = ({ setLoginOrSignup }) => {
-  const handleLogin = (e) => {
-    e.preventDefault();
-  };
-
+const Login = ({
+  setLoginOrSignup,
+  loginUser,
+}: {
+  setLoginOrSignup: React.Dispatch<React.SetStateAction<boolean>>;
+  loginUser: string | ((formData: FormData) => void);
+}) => {
   return (
     <motion.form
+      action={loginUser}
       initial={{ x: 25, opacity: 0 }}
       animate={{ x: 0, opacity: 1, transition: { duration: 0.5 } }}
-      onSubmit={(e) => handleLogin(e)}
       className="flex flex-col justify-center items-start"
     >
       <p className="text-4xl mb-2">Login</p>
       <input
         autoFocus={true}
         type="username"
+        name="username"
         placeholder="Username"
         className="text-lg py-2 focus:outline-none focus:bg-slate-50 duration-200 hover:bg-slate-50"
       />
       <input
         type="email"
+        name="email"
         placeholder="Email"
         className="text-lg py-2 focus:outline-none focus:bg-slate-50 duration-200 hover:bg-slate-50"
       />
       <input
         type="password"
+        name="password"
         placeholder="Password"
         className="text-lg py-2 focus:outline-none focus:bg-slate-50 duration-200 hover:bg-slate-50"
       />

@@ -1,32 +1,49 @@
 import { motion } from "framer-motion";
 
-const Signup = ({ setLoginOrSignup }) => {
-  const handleSignup = (e) => {
-    e.preventDefault();
-  };
-
+const Signup = ({
+  setLoginOrSignup,
+  signupUser,
+}: {
+  setLoginOrSignup: React.Dispatch<React.SetStateAction<boolean>>;
+  signupUser: (formData: FormData) => void;
+}) => {
   return (
     <motion.form
+      action={signupUser}
       initial={{ x: 25, opacity: 0 }}
       animate={{ x: 0, opacity: 1, transition: { duration: 0.5 } }}
-      onSubmit={(e) => handleSignup(e)}
       className="flex flex-col justify-center items-start"
     >
       <p className="text-4xl mb-2">Sign Up</p>
       <input
         autoFocus={true}
         type="username"
+        name="username"
         placeholder="Username"
         className="text-lg py-2 focus:outline-none focus:bg-slate-50 duration-200 hover:bg-slate-50"
       />
       <input
         type="email"
+        name="email"
         placeholder="Email"
         className="text-lg py-2 focus:outline-none focus:bg-slate-50 duration-200 hover:bg-slate-50"
       />
       <input
         type="password"
+        name="password"
         placeholder="Password"
+        className="text-lg py-2 focus:outline-none focus:bg-slate-50 duration-200 hover:bg-slate-50"
+      />
+      <input
+        type="date"
+        name="birthday"
+        placeholder="Birthday"
+        className="text-lg py-2 focus:outline-none focus:bg-slate-50 duration-200 hover:bg-slate-50"
+      />
+      <input
+        type="phone"
+        name="phone"
+        placeholder="(702) 981-1370"
         className="text-lg py-2 focus:outline-none focus:bg-slate-50 duration-200 hover:bg-slate-50"
       />
       <div className="flex gap-x-5">
