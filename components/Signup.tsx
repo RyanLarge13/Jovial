@@ -1,10 +1,11 @@
 import { motion } from "framer-motion";
+import { Dispatch, SetStateAction } from "react";
 
 const Signup = ({
   setLoginOrSignup,
   signupUser,
 }: {
-  setLoginOrSignup: React.Dispatch<React.SetStateAction<boolean>>;
+  setLoginOrSignup: Dispatch<SetStateAction<boolean>>;
   signupUser: (formData: FormData) => void;
 }) => {
   return (

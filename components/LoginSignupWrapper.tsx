@@ -1,10 +1,16 @@
 "use client";
 
-import { useState } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
 import Login from "./Login";
 import Signup from "./Signup";
 
-const LoginSignupWrapper = ({ loginUser, signupUser }) => {
+const LoginSignupWrapper = ({
+  loginUser,
+  signupUser,
+}: {
+  loginUser: (formData: FormData) => void;
+  signupUser: (formData: FormData) => void;
+}) => {
   const [loggingOrSignup, setLoginOrSignup] = useState(false);
 
   return (
