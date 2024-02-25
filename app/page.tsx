@@ -2,6 +2,7 @@ import { PrismaClient } from "@prisma/client";
 import Image from "next/image";
 import BG from "../public/login-bg.svg";
 import LoginSignupWrapper from "@/components/LoginSignupWrapper";
+
 const prisma = new PrismaClient();
 
 export default function Home() {
@@ -41,7 +42,7 @@ export default function Home() {
   };
 
   return (
-    <main className="flex flex-col md:flex-row justify-center items-center h-screen px-5 lg:px-40 relative">
+    <main className="flex flex-col md:flex-row justify-evenly md:justify-center items-center h-screen px-5 lg:px-40 relative">
       <Image
         src={BG}
         alt="background"

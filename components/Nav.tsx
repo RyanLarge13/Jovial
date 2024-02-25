@@ -16,13 +16,17 @@ const Nav = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="flex gap-x-10"
+            className="fixed top-10 gap-y-5 right-10 flex flex-col justify-between items-start lg:relative lg:gap-y-0 lg:top-0 lg:flex-row lg:gap-x-10"
           >
             <li>
               <Link href="/">Home</Link>
             </li>
-            <li>Contact</li>
-            <li>About Jovial</li>
+            <li>
+              <Link href="/contact">Contact</Link>
+            </li>
+            <li>
+              <Link href="/about">About Jovial</Link>
+            </li>
           </motion.ul>
         )}
       </AnimatePresence>

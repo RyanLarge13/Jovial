@@ -21,31 +21,31 @@ const Signup = ({
         type="username"
         name="username"
         placeholder="Username"
-        className="text-lg py-2 focus:outline-none focus:bg-slate-50 duration-200 hover:bg-slate-50"
+        className="text-lg py-2 px-2 rounded-sm focus:my-1 focus:outline-none focus:bg-slate-50 duration-200 hover:bg-slate-50"
       />
       <input
         type="email"
         name="email"
         placeholder="Email"
-        className="text-lg py-2 focus:outline-none focus:bg-slate-50 duration-200 hover:bg-slate-50"
+        className="text-lg py-2 px-2 rounded-sm focus:my-1 focus:outline-none focus:bg-slate-50 duration-200 hover:bg-slate-50"
       />
       <input
         type="password"
         name="password"
         placeholder="Password"
-        className="text-lg py-2 focus:outline-none focus:bg-slate-50 duration-200 hover:bg-slate-50"
+        className="text-lg py-2 px-2 rounded-sm focus:my-1 focus:outline-none focus:bg-slate-50 duration-200 hover:bg-slate-50"
       />
       <input
         type="date"
         name="birthday"
         placeholder="Birthday"
-        className="text-lg py-2 focus:outline-none focus:bg-slate-50 duration-200 hover:bg-slate-50"
+        className="text-lg py-2 px-2 rounded-sm focus:my-1 focus:outline-none focus:bg-slate-50 duration-200 hover:bg-slate-50"
       />
       <input
         type="phone"
         name="phone"
         placeholder="(702) 981-1370"
-        className="text-lg py-2 focus:outline-none focus:bg-slate-50 duration-200 hover:bg-slate-50"
+        className="text-lg py-2 px-2 rounded-sm focus:my-1 focus:outline-none focus:bg-slate-50 duration-200 hover:bg-slate-50"
       />
       <div className="flex gap-x-5">
         <button
